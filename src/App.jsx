@@ -4,6 +4,8 @@ import axios from "axios";
 // import CountryData from "./components/CountryData";
 import SearchBar from "./components/SearchBar";
 import View from "./components/View";
+import { inject } from '@vercel/analytics';
+ 
 
 const App = () => {
   const [countries, setCountries] = useState(null);
@@ -31,6 +33,7 @@ const App = () => {
   }, [filteredCountries.length]);
 
   useEffect(() => {
+    inject(); // Injects the Vercel Web Analytics script into the page head and starts tracking page views.
     axios
       .get("https://studies.cs.helsinki.fi/restcountries/api/all")
       .then((response) => setCountries(response.data))
