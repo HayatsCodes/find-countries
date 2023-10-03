@@ -169,6 +169,18 @@ img.weather-img + .wind {
   margin: 2.5em 0;
 }
 
+.time-zones {
+  margin-bottom: -1.2em;
+}
+
+.currencies {
+  margin-bottom: -1.2em;
+}
+
+.languages {
+  margin-bottom: -.8em;
+}
+
 .wind {
   margin-top: 1em;
 }

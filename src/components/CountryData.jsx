@@ -16,11 +16,23 @@ const CountryData = ({ countries, index, weather }) => {
         <h3>Capital</h3>
         <p>{countries[index].capital ? countries[index].capital[0]: 'No Capital'}</p>
       </div>
+      <div className="country-view-content currencies">
+        <h3>Currencies</h3>
+        <ul>
+          {Object.values(countries[index].currencies).map((currency) => (
+            <li key={currency}>{`${currency.name} (${currency.symbol})`}</li>
+          ))}
+        </ul>
+      </div>
       <div className="country-view-content">
         <h3>Area</h3>
         <p>{countries[index].area} Km²</p>
       </div>
       <div className="country-view-content">
+        <h3>Population</h3>
+        <p>{countries[index].population}</p>
+      </div>
+      <div className="country-view-content languages">
         <h3>Languages</h3>
         <ul>
           {Object.values(countries[index].languages).map((language) => (
@@ -34,6 +46,15 @@ const CountryData = ({ countries, index, weather }) => {
           src={countries[index].flags.png}
           alt={countries[index].flags.alt}
         />
+      </div>
+
+      <div className="country-view-content time-zones">
+        <h3>Time Zones</h3>
+        <ul>
+          {countries[index].timezones.map((timezone) => (
+            <li key={timezone}>{timezone}</li>
+          ))}
+        </ul>
       </div>
 
       <div className="country-view-content"></div>
